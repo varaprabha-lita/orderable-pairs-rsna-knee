@@ -1,0 +1,71 @@
+# ---------------------------------------------------------------------------
+# Data, by licence. Neither the RSNA MIRA agreement nor PadChest's permits
+# redistribution of any portion of the corpora, and a table keyed to a study
+# or series UID is a portion. These rules exist so that committing one takes
+# a deliberate override rather than a careless `git add -A`.
+# ---------------------------------------------------------------------------
+
+# Corpora and caches
+*.dcm
+*.dicom
+*.nii
+*.nii.gz
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.zip
+*.tar
+*.tar.gz
+data/
+raw/
+cache/
+caches/
+embeddings/
+images/
+series/
+volumes/
+
+# Derived per-study records — these identify studies and must not be shared
+*.csv
+*.tsv
+*.parquet
+*.feather
+extractions/
+labels/
+predictions/
+submissions/
+folds/
+vocab_*.txt
+*_heldout_studies.txt
+*_split.json
+
+# Reports and any text drawn from them
+reports/
+*.report.txt
+
+# Figures are rebuilt from the scripts; the PNG/TIFF outputs are not source
+*.tif
+*.tiff
+
+# ---------------------------------------------------------------------------
+# If you need to commit a genuinely aggregated file — one with no study or
+# series identifier in it, and no row that corresponds to a single study —
+# force it explicitly and say so in the commit message:
+#     git add -f results/macro_auc_by_target.csv
+# ---------------------------------------------------------------------------
+
+# Ordinary Python noise
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+.env
+*.egg-info/
+.DS_Store
+.vscode/
+.idea/
